@@ -2256,7 +2256,10 @@ font-size: 22px;
       .blog-start h1{
         font-size: 65px;
       }
-   
+   .review span i{
+    position: relative;
+    left:16%;
+   }
 }
 @media (max-width: 400px){
 
