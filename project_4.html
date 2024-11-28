@@ -129,5 +129,37 @@
 </div>
 <!-------------------------------Footer Ends----------------------------------------------->
 <script src="script.js"></script>
+<script>
+  let currentIndex = 0;
+ 
+ function showSlide(index) {
+     const projectSlider = document.querySelector('.project-slider');
+     const projectSlides = document.querySelectorAll('.project-slide');
+     if (index >= projectSlides.length) {
+         currentIndex = 0;
+     } else if (index < 0) {
+         currentIndex = projectSlides.length - 1;
+     } else {
+         currentIndex = index;
+     }
+     projectSlider.style.transform = `translateX(-${currentIndex * 100}%)`;
+ }
+ 
+ document.getElementById('project-next').addEventListener('click', () => {
+     showSlide(currentIndex + 1);
+ });
+ 
+ document.getElementById('project-prev').addEventListener('click', () => {
+     showSlide(currentIndex - 1);
+ });
+ 
+ // Automatic slide advancement
+ function autoAdvance() {
+     showSlide(currentIndex + 1);
+ }
+ 
+ setInterval(autoAdvance, 3000); // Change slide every 3 seconds
+ 
+ </script>
 </body>
 </html>

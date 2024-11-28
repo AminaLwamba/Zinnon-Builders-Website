@@ -456,5 +456,26 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-------------Footer Ends------------------------------------------------->
     <script src="script.js"></script>
+    <script>
+        //gallery filter
+// gallery filter starts **gallery section (homepage)**
+$(document).ready(function(){
+    $(".list").click(function(){
+        const value=$(this).attr("data-filter");
+        if(value == "all"){
+            $(".gal-photo").show("1000")
+        }
+        else{
+            $(".gal-photo").not("." + value).hide("1000")
+            $(".gal-photo").filter("." + value).show("1000")
+        }
+    })
+    //Active class on buttons
+    $(".list").click(function(){
+        $(this).addClass("active").siblings().removeClass("active")
+    })
+   }) 
+// gallery filter ends **gallery section (homepage)**
+    </script>
 </body>
 </html>
