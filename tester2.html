@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Container with Manual Slider and Project Details</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .main-container {
+            width: 90%;
+            min-height: 100vh;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .project-slider-container {
+            width: 64%;
+            box-sizing: border-box;
+        }
+        .project-details-container {
+            width: 35%;
+            background-color: #ffffff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .more-pj-detail{
+            padding: 30px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+        .project-slider-container .slider-container {
+            height: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+        .project-slider-container .slider {
+            display: flex;
+            height: 600px;
+            transition: transform 0.5s ease-in-out;
+        }
+        .project-slider-container .slide {
+            min-width: 100%;
+            height: 600px;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+        .project-slider-container .slide img {
+            min-width: 100%;
+            height: 100%;
+            object-fit: cover;
+         
+        }
+        
+        .project-slider-container .slider-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .project-slider-container .slider-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            outline: none;
+        }
+        .project-summary-container {
+            display: flex;
+             justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .project-box {
+            width: 400px;
+            height: 400px;
+            background-color: #fafafa;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        .project-box img {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+        }
+        .project-box a {
+            text-decoration: none;
+            color: #007BFF;
+            margin-top: 10px;
+        }
+        @media (max-width: 1200px) {
+            .project-slider-container, .project-details-container {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        @media (max-width: 768px) {
+            .main-container {
+                width: 100%;
+                flex-direction: column;
+            }
+            .slider-container {
+                height: 400px;
+            }
+            .slider {
+                height: 400px;
+            }
+            .slide {
+                height: 400px;
+                font-size: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .slider-container {
+                height: 300px;
+            }
+            .slider {
+                height: 300px;
+            }
+            .slide {
+                height: 300px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-size: 60px;">Marlin highrise Apartments</h1>
+    <div class="main-container">
+        <div class="project-slider-container">
+            <div class="slider-container">
+                <div class="slider-buttons">
+                    <button id="prev">Prev</button>
+                    <button id="next">Next</button>
+                </div>
+                <div class="slider">
+                    <div class="slide"><img src="images/about.jpg"></div>
+                    <div class="slide"><img src="images/blog5.jpg" alt=""></div>
+                    <div class="slide"><img src="images/commercial1.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="project-details-container">
+            <h1>Marlin High Rise Apartments</h1>
+            <p>Marlin High Rise Apartments is a landmark residential development that embodies luxury, modern design, and sustainable living. Situated in a prime urban location, this project offers residents stunning views, high-end finishes, and a host of amenities including a rooftop garden, fitness center, and swimming pool. Zinon Builders Group's commitment to excellence is reflected in the eco-friendly construction practices employed throughout the project, ensuring minimal environmental impact. This development not only elevates urban living but also contributes positively to the surrounding community with its thoughtfully designed retail spaces and communal areas.</p>
+            <div class="more-pj-detail">
+            <h2>Project Details</h2>
+            <p><strong>Category:</strong> Residential Construction</p>
+            <p><strong>Date:</strong> July 2022 - December 2023</p>
+            <p><strong>Client:</strong> Janice Mokaya</p>
+            <p><strong>Project Name:</strong> The Pinnacle</p>
+        </div>
+    </div>
+    </div>
+    <h3 style=" font-size: 50px; text-align: center;">Related Projects</h3>
+    <div class="project-summary-container">
+       
+        <div class="project-box">
+            <img src="images/commercial3.jpg" alt="Image 1">
+            <h3>Title 1</h3>
+            <a href="https://example.com/link1">Read More</a>
+        </div>
+        <div class="project-box">
+            <img src="images/commercial5.jpg" alt="Image 2">
+            <h3>Title 2</h3>
+            <a href="https://example.com/link2">Read More</a>
+        </div>
+        <div class="project-box">
+            <img src="images/green.jpg" alt="Image 3">
+            <h3>Title 3</h3>
+            <a href="https://example.com/link3">Read More</a>
+        </div>
+    </div>
+    
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slider = document.querySelector('.slider');
+            const slides = document.querySelectorAll('.slide');
+            if (index >= slides.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else {
+                currentIndex = index;
+            }
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        document.getElementById('next').addEventListener('click', () => {
+            showSlide(currentIndex + 1);
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            showSlide(currentIndex - 1);
+        });
+    </script>
+</body>
+</html>
