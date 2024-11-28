@@ -2262,7 +2262,10 @@ font-size: 22px;
    }
 }
 @media (max-width: 400px){
-
+  .review span i{
+    position: relative;
+    left:16%;
+   }
     .hero-box-1{
     padding: 10px 10px;
     }
